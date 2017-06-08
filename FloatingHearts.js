@@ -32,7 +32,9 @@ class FloatingHearts extends Component {
 
     if (numHearts <= 0) return
 
-    const newHearts = [...Array(numHearts).keys()].map(createHeart)
+    const newHearts = [...Array(numHearts).keys()]
+      .map(index => oldCount + index)
+      .map(this.createHeart)
     this.setState({hearts: this.state.hearts.concat(newHearts)})
   }
 
